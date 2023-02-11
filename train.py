@@ -400,7 +400,7 @@ def main():
     #topSimilar(w2v, "india")
     
     # save weights
-    with open('w2vecbow_v3.pkl', 'wb') as f:
+    with open('w2vecbow_v4.pkl', 'wb') as f:
         pickle.dump(w2v, f)
 
 
