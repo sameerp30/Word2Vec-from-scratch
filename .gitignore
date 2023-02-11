@@ -1,1 +1,16 @@
 w2veccbow.pkl
+data/
+data2012rem/
+data2013rem/
+samanantar/
+remanalogies/
+Analogies_remaining.txt
+analogies_remaining2.txt
+Analogy_sentences.txt
+news.2012.en.shuffled.txt
+news.2013.en.shuffled.txt
+totalcounts.txt
+*.log
+*.pkl
+newwiki (1)/
+gutenberg.txt
