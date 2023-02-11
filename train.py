@@ -393,7 +393,6 @@ def main():
 
     # compute count of data instances currently present
     count_instances(w2v, sents)
-    exit()
 
     train_testmodel(w2v, sents, word_to_index, num_epochs)
 
