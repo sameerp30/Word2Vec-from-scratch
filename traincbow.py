@@ -21,7 +21,7 @@ def softmax(z):
 class word2vec(object):
 
     def __init__(self):
-        self.N = 300
+        self.N = 100
         self.X_train = []
         self.y_train = []
         self.window_size = 4
@@ -217,7 +217,8 @@ def evaluate(w2v):
     acc = score/cnt
     print("Accuracy is {}".format(acc))
 
-
+    cnt = 0
+    score = 0
     for key,value in w2v.validation_mappings.items():
         w1, w2 = key.split(":")[0], key.split(":")[1]
         w3, w4 = value.split(":")[0], value.split(":")[1]
@@ -387,8 +388,11 @@ def main():
     word_to_index, index_to_word = index_word_maps(words)
 
 
-    w2v = word2vec()
-    w2v.initialize(len(word_to_index.keys()), words, word_to_index, validation_mappings, analogy_mappings, index_to_word)
+    # w2v = word2vec()
+    # w2v.initialize(len(word_to_index.keys()), words, word_to_index, validation_mappings, analogy_mappings, index_to_word)
+    # load w2vec model
+    with open("./w2vecbow_v4.pkl", "rb") as f:
+        w2v = pickle.load(f)
     print("Length of vocab is {}".format(w2v.V))
 
     # compute count of data instances currently present
@@ -402,7 +406,6 @@ def main():
     # save weights
     with open('w2vecbow_v4.pkl', 'wb') as f:
         pickle.dump(w2v, f)
-
 
 if __name__ == "__main__":
     main()
