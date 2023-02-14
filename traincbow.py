@@ -61,7 +61,7 @@ class word2vec(object):
         assert self.y_hat.shape == (self.V, len(X))
 
         return self.y_hat
-          
+
     def backpropagate(self, x, t):
         t_ = np.array(t).T
         x_ = np.array(x).T

@@ -16,3 +16,4 @@ newwiki (1)/
 gutenberg.txt
 data.zip
 *.zip
+.ipynb_checkpoints/
